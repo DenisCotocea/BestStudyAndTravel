@@ -136,24 +136,48 @@
     </section>
 
     <section id="process" class="section-padding" style="background: #fff;">
-      <h2 class="text-center" data-aos="fade-down">Cum aplici?</h2>
-      <div class="process-container">
-        <div class="process-step" data-aos="fade-right">
-          <div class="step-num">1</div>
-          <h3>Alegi Cursul</h3>
-          <p>Explorează lista și alege destinația care ți se potrivește.</p>
+      <h2 class="text-center" data-aos="fade-down">Ghid de Aplicare</h2>
+
+      <div class="tabs-container">
+        <div class="tabs-header">
+          <button @click="activeTab = 'cine'" :class="{active: activeTab === 'cine'}">Cine poate?</button>
+          <button @click="activeTab = 'cum'" :class="{active: activeTab === 'cum'}">Cum aplic?</button>
+          <button @click="activeTab = 'scrisoare'" :class="{active: activeTab === 'scrisoare'}">Motivație</button>
+          <button @click="activeTab = 'validare'" :class="{active: activeTab === 'validare'}">Validare Cont</button>
         </div>
-        <div class="process-line"></div>
-        <div class="process-step" data-aos="fade-up">
-          <div class="step-num">2</div>
-          <h3>Scrii motivational letter-ul</h3>
-          <p>Compune o scrisoare de intenție creativă (Motivation Letter).</p>
-        </div>
-        <div class="process-line"></div>
-        <div class="process-step" data-aos="fade-left">
-          <div class="step-num">3</div>
-          <h3>Aplici Online</h3>
-          <p>Trimite aplicația pe site-ul BEST și așteaptă selecția!</p>
+
+        <div class="tab-content card-pop" data-aos="fade-up">
+          <div v-if="activeTab === 'cine'">
+            <h3><i class="fa-solid fa-user-graduate"></i> Eligibilitate</h3>
+            <p>{{ aplicareContent.cine.text }}</p>
+            <ul class="styled-list">
+              <li v-for="rule in aplicareContent.cine.rules" :key="rule">{{ rule }}</li>
+            </ul>
+          </div>
+
+          <div v-if="activeTab === 'cum'">
+            <h3><i class="fa-solid fa-list-check"></i> Pașii necesari</h3>
+            <div class="process-grid">
+              <div v-for="(step, i) in aplicareContent.cum.steps" :key="i" class="mini-step">
+                <span>{{ i + 1 }}</span> {{ step }}
+              </div>
+            </div>
+            <p class="note"><strong>Sfat:</strong> Taxa pentru participanții din România este de 60% din taxa afișată!</p>
+          </div>
+
+          <div v-if="activeTab === 'scrisoare'">
+            <h3><i class="fa-solid fa-pen-nib"></i> Scrisoarea de Motivație</h3>
+            <p>Este cel mai important document! Arată-le cine ești, pasiunile tale și de ce ai ales acea destinație.</p>
+            <div class="tip-box">
+              <i class="fa-solid fa-lightbulb"></i> Fii original! Organizatorii apreciază umorul și autenticitatea.
+            </div>
+          </div>
+
+          <div v-if="activeTab === 'validare'">
+            <h3><i class="fa-solid fa-user-check"></i> Cum îți activezi contul?</h3>
+            <p>După înregistrarea pe site-ul european, trimite-ne un mesaj cu: Nume, Email, Telefon, Facultate și An.</p>
+            <p><strong>Urmează:</strong> O scurtă conversație în limba engleză pentru confirmare!</p>
+          </div>
         </div>
       </div>
     </section>
@@ -167,6 +191,33 @@
              @click="toggleCheck(index)">
           <i :class="item.icon"></i>
           <p>{{ item.text }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="rules" class="section-padding" style="background: linear-gradient(to right, #fdfbfb, #ebedee);">
+      <div class="rules-grid">
+        <div class="rules-column" data-aos="fade-right">
+          <h2 style="font-size: 2rem;"><i class="fa-solid fa-gift" style="color: var(--pink-pop)"></i> Beneficii</h2>
+          <div class="rule-card">
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Aproximativ 20h cursuri/săptămână</li>
+              <li><i class="fa-solid fa-check"></i> Cazare și 3 mese pe zi incluse</li>
+              <li><i class="fa-solid fa-check"></i> Certificat oficial + credite ECTS</li>
+              <li><i class="fa-solid fa-check"></i> Program social și petreceri tematice</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rules-column" data-aos="fade-left">
+          <h2 style="font-size: 2rem;"><i class="fa-solid fa-shield-halved" style="color: var(--blue-sky)"></i> Responsabilități</h2>
+          <div class="rule-card">
+            <ul>
+              <li><i class="fa-solid fa-circle-exclamation"></i> Prezență la întreaga parte academică</li>
+              <li><i class="fa-solid fa-circle-exclamation"></i> Comportament civilizat și respectuos</li>
+              <li><i class="fa-solid fa-circle-exclamation"></i> Completarea formularului de evaluare final</li>
+              <li><i class="fa-solid fa-circle-exclamation"></i> Plata depozitului de confirmare</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -193,7 +244,7 @@
         <div class="responsible-card mouse-hover">
           <img src="https://ui-avatars.com/api/?name=Diana+I&background=ff9a9e&color=fff&size=256" class="resp-img">
           <div class="resp-content">
-            <h3>Diana Ionescu</h3>
+            <h3>Diana Georgescu</h3>
             <span class="resp-role">Main Organizer & Responsible</span>
             <p>Ea se asigură că ajungi cu bine la destinație și că ai cea mai tare experiență academică. Orice întrebare ai, ea este persoana potrivită!</p>
           </div>
@@ -204,12 +255,14 @@
     <section class="section-padding" style="background: #fff;">
       <h2 class="text-center" style="margin-bottom: 40px;">Wall of Memories</h2>
       <div class="gallery-wrapper">
-        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=500&q=80" class="gallery-img" data-aos="fade-up">
-        <img src="https://images.unsplash.com/photo-1506784983877-45594fa4c50d?auto=format&fit=crop&w=500&q=80" class="gallery-img" data-aos="fade-up">
-        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=500&q=80" class="gallery-img" data-aos="fade-up">
-        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=500&q=80" class="gallery-img" data-aos="fade-up">
-        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=500&q=80" class="gallery-img" data-aos="fade-up">
-        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=500&q=80" class="gallery-img" data-aos="fade-up">
+        <img
+            v-for="(img, index) in wallPhotos"
+            :key="index"
+            :src="`/images/wallofmemories/${img}`"
+            class="gallery-img"
+            data-aos="fade-up"
+            :alt="'Memory ' + index"
+        >
       </div>
     </section>
 
@@ -333,7 +386,50 @@ const coursesList = ref([
   }
 ]);
 
+
+const wallPhotos = ref([
+  'PIQ_0381.JPG',
+  'PIQ_0461.JPG',
+  'PIQ_9483.jpg',
+  'PIQ_9533.jpg',
+  'PIQ_9687.jpg',
+  'PIQ_9925.jpg',
+]);
+
+const activeTab = ref('cine');
+
+const aplicareContent = {
+  cine: {
+    title: "Cine poate aplica?",
+    text: "Orice student din cadrul Universităţii Transilvania poate aplica la cursurile de sezon BEST. Dacă este în an terminal, acesta trebuie să fie student doar în momentul aplicării.",
+    rules: [
+      "Maxim 3 cursuri BEST (BEST Courses)",
+      "Maxim 3 evenimente despre educație (Symposium on Education)",
+      "Maxim 2 cursuri BEST în sezoanele de vară",
+      "Maxim 1 curs BEST pe sezon"
+    ]
+  },
+  cum: {
+    title: "Procedura de Aplicare",
+    steps: [
+      "Creează cont pe www.best.eu.org",
+      "Scrie o scrisoare de motivație (Motivation Letter)",
+      "Răspunde la întrebările specifice cursului",
+      "Contactează-ne pentru validarea contului",
+      "Plătește depozitul de 40€ (returnabil) după acceptare"
+    ]
+  },
+  motivație: {
+    title: "Scrisoarea de Motivație",
+    tips: "Organizatorii vor să știe: Cine ești? De ce acest curs? De ce acest oraș? Fii creativ, adaugă puțin umor și evită scrisorile standard!"
+  }
+};
+
 const faqs = ref([
+  { question: "Care este taxa pentru români?", answer: "Participanții români plătesc doar 60% din taxa cursului ales pentru a face educația mai accesibilă.", open: false },
+  { question: "De ce sunt prețurile atât de mici?", answer: "Datorită parteneriatelor cu universitățile și companiile locale care subvenționează costurile pentru studenți.", open: false },
+  { question: "Primesc credite ECTS?", answer: "Da, vei primi un certificat BEST semnat de profesorul coordonator care include numărul de credite ECTS alocat.", open: false },
+  { question: "Cum se face selecția?", answer: "Se bazează pe scrisoarea de motivație, diversitate geografică și experiența anterioară în domeniu.", open: false },
   { question: "Pot aplica dacă nu am experiență?", answer: "Da! Cursurile BEST sunt concepute pentru studenți de toate nivelele. Motivația contează cel mai mult!", open: false },
   { question: "Ce include taxa?", answer: "Taxa acoperă cazarea, 3 mese pe zi și transportul în timpul evenimentului, plus activitățile sociale.", open: false },
   { question: "Cum îmi scriu scrisoarea de intenție?", answer: "Fii creativ și sincer! Spune-ne de ce vrei să mergi acolo și ce aduci unic în grup.", open: false },
@@ -756,5 +852,81 @@ input:focus, textarea:focus { border-color: var(--pink-pop); background: white; 
   .nav-links { display: none; }
   .contact-box { flex-direction: column; }
   .stats-bar { gap: 30px; }
+}
+
+.tabs-header {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.tabs-header button {
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: 2px solid var(--pink-soft);
+  background: white;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.tabs-header button.active {
+  background: var(--pink-pop);
+  color: white;
+  border-color: var(--pink-pop);
+  box-shadow: 0 5px 15px rgba(255, 154, 158, 0.4);
+}
+
+.tab-content {
+  background: white;
+  padding: 50px;
+  border-radius: 40px;
+  box-shadow: var(--shadow-pop);
+  min-height: 300px;
+}
+
+.styled-list {
+  list-style: none;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.styled-list li::before {
+  content: '✦';
+  color: var(--pink-pop);
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.rule-card {
+  background: white;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: var(--shadow-pop);
+}
+
+.rule-card ul { list-style: none; }
+.rule-card li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+.tip-box {
+  background: #fff8e1;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  border-left: 5px solid var(--accent-gold);
+}
+
+@media (max-width: 768px) {
+  .rules-grid { grid-template-columns: 1fr; }
+  .tab-content { padding: 30px 20px; }
 }
 </style>
