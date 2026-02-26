@@ -1,7 +1,5 @@
 <template>
   <div class="landing-container">
-    <div ref="cursorDot" class="cursor-dot"></div>
-    <div ref="cursorOutline" class="cursor-outline"></div>
 
     <div id="sakura-container" ref="sakuraContainer"></div>
 
@@ -50,15 +48,17 @@
 
     <nav>
       <div class="logo mouse-hover">
-        <i class="fa-solid fa-paper-plane" style="color:var(--pink-pop)"></i> BEST<span style="color:var(--pink-pop)">Courses</span>
+        <img src="/images/logo.png" alt="BEST Logo" class="nav-logo-img" style="height: 55px">
       </div>
       <div class="nav-links">
         <a href="#hero" class="mouse-hover">Home</a>
         <a href="#courses" class="mouse-hover">Destinații</a>
         <a href="#process" class="mouse-hover">Proces</a>
+        <a href="#essentials" class="mouse-hover">Pack-it</a>
+        <a href="#faq" class="mouse-hover">FAQ</a>
         <a href="#contact" class="mouse-hover">Contact</a>
       </div>
-      <a href="#courses" class="btn-pop mouse-hover" style="padding: 10px 25px; font-size: 0.9rem;">Sign Up</a>
+      <a href="#courses" class="btn-pop mouse-hover" style="padding: 10px 25px; font-size: 0.9rem;">Leave a massage</a>
     </nav>
 
     <section id="hero" class="hero">
@@ -67,7 +67,7 @@
 
       <h4 style="color: var(--blue-sky); letter-spacing: 4px; margin-bottom: 15px; font-weight: 800;">SEASON 2026</h4>
       <h1>Time to <span ref="typedText" class="highlight"></span></h1>
-      <p>Experiențe legendare, prieteni noi și cursuri academice top în toată Europa. <br>Aventura ta începe aici.</p>
+      <p>Experiențe legendare, prieteni noi și cursuri academice de calitate/calitative în toată Europa. <br>Aventura ta începe aici.</p>
       <div style="margin-top: 40px;">
         <a href="#courses" class="btn-pop mouse-hover"><i class="fa-solid fa-rocket"></i> Explorează Cursuri</a>
       </div>
@@ -89,7 +89,7 @@
     </section>
 
     <section class="section-padding">
-      <h2 class="text-center" data-aos="fade-up">De ce să aplici?</h2>
+      <h2 class="text-center" data-aos="fade-up">De ce sa aplici?</h2>
       <div class="card-container">
         <div class="tilt-card" ref="tiltElements" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
           <div class="tilt-icon"><i class="fa-solid fa-piggy-bank" style="color: var(--pink-pop)"></i></div>
@@ -110,7 +110,7 @@
     </section>
 
     <section id="courses" class="section-padding" style="background: rgba(255,255,255,0.4);">
-      <h2 class="text-center" style="margin-bottom: 50px;" data-aos="zoom-in">Destinații Europene</h2>
+      <h2 class="text-center" style="margin-bottom: 50px;" data-aos="zoom-in">Destinatii Europene</h2>
       <p class="text-center" style="margin-top: -30px; margin-bottom: 50px; color: var(--pink-pop); font-weight: 700; letter-spacing: 1px;">CLICK PE IMAGINI PENTRU DETALII</p>
 
       <div class="swiper mySwiper">
@@ -209,7 +209,7 @@
           </div>
         </div>
         <div class="rules-column" data-aos="fade-left">
-          <h2 style="font-size: 2rem;"><i class="fa-solid fa-shield-halved" style="color: var(--blue-sky)"></i> Responsabilități</h2>
+          <h2 style="font-size: 2rem;"><i class="fa-solid fa-shield-halved" style="color: var(--blue-sky)"></i> Responsabilitati</h2>
           <div class="rule-card">
             <ul>
               <li><i class="fa-solid fa-circle-exclamation"></i> Prezență la întreaga parte academică</li>
@@ -223,7 +223,7 @@
     </section>
 
     <section id="faq" class="section-padding" style="background: #fdfbfb;">
-      <h2 class="text-center">Întrebări Frecvente</h2>
+      <h2 class="text-center">Întrebari Frecvente</h2>
       <div class="faq-container">
         <div class="faq-item" v-for="(faq, i) in faqs" :key="i" @click="faq.open = !faq.open" :class="{ open: faq.open }">
           <div class="faq-question">
@@ -238,11 +238,11 @@
     </section>
 
     <section id="responsible" class="section-padding" style="background: linear-gradient(to bottom, #fff, #fff0f5);">
-      <h2 class="text-center" data-aos="zoom-in">Main Coordinator 👑</h2>
+      <h2 class="text-center" data-aos="zoom-in">Responsabil Vivaldi 👑</h2>
 
       <div class="responsible-wrapper" data-aos="flip-up">
         <div class="responsible-card mouse-hover">
-          <img src="https://ui-avatars.com/api/?name=Diana+I&background=ff9a9e&color=fff&size=256" class="resp-img">
+          <img src="/images/diana.jpg" class="resp-img" alt="Diana Georgescu">
           <div class="resp-content">
             <h3>Diana Georgescu</h3>
             <span class="resp-role">Main Organizer & Responsible</span>
@@ -267,11 +267,11 @@
     </section>
 
     <section id="contact" class="section-padding">
-      <h2 class="text-center" style="margin-bottom: 50px;">Hai să povestim</h2>
+      <h2 class="text-center" style="margin-bottom: 50px;">Hai sa povestim</h2>
       <div class="contact-box" data-aos="zoom-in">
         <div class="contact-info">
           <h3>BEST Brasov</h3>
-          <p>brasov@best.eu.org</p>
+          <p>brasov@best-eu.org</p>
         </div>
         <div class="contact-form">
           <form>
@@ -285,9 +285,21 @@
     </section>
 
     <footer>
-      <div class="text-center" style="padding: 40px;">
-        <h2 style="color: var(--blue-sky);">BEST Travel</h2>
-        <p style="font-size: 0.9rem; opacity: 0.6;">Designed with <i class="fa-solid fa-heart" style="color:var(--pink-pop)"></i> for BEST Brasov</p>
+      <div class="text-center" style="padding: 60px 40px;">
+        <h2 style="color: var(--blue-sky); margin-bottom: 20px;">BEST Travel</h2>
+
+        <div class="footer-socials" style="margin-bottom: 25px;">
+          <a href="https://www.instagram.com/bestbrasov/" target="_blank" class="social-icon">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/BESTBrasov" target="_blank" class="social-icon">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+        </div>
+
+        <p style="font-size: 0.9rem; opacity: 0.6;">
+          Designed with <i class="fa-solid fa-heart" style="color:var(--pink-pop)"></i> for BEST Brasov
+        </p>
       </div>
     </footer>
   </div>
@@ -313,79 +325,222 @@ const currentModalData = ref({});
 
 const coursesList = ref([
   {
-    city: 'Thessaloniki',
-    country: 'Greece',
-    title: 'Think Green, Build Smart',
-    dates: '8 - 16 March 2026',
-    fee: '90.0€',
-    link: 'https://best.eu.org/event/details.jsp?activity=q0ovs82',
-    img: 'https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=600&q=80'
-  },
-  {
-    city: 'Las Palmas',
-    country: 'Spain',
-    title: 'INSIDE AI: Where Data Becomes Smart',
-    dates: '19 - 26 March 2026',
-    fee: '80.0€',
-    link: 'https://best.eu.org/event/details.jsp?activity=i4kfkbh',
-    img: 'https://media.istockphoto.com/id/490241680/ro/fotografie/las-palmas-de-gran-canaria.jpg?s=612x612&w=0&k=20&c=HVycakgQWWjYJwncPF7kwU-85ND4drhW3WGvGb-DFXk='
-  },
-  {
-    city: 'Palaiseau',
+    city: 'Bordeaux',
     country: 'France',
-    title: 'Understanding Nanosciences',
-    dates: '21 - 28 March 2026',
-    fee: '80.0€',
-    link: 'https://best.eu.org/event/details.jsp?activity=o1nrq8w',
-    img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80'
-  },
-  {
-    city: 'Kaunas',
-    country: 'Lithuania',
-    title: 'Hands-on Chip Design',
-    dates: '29 March - 5 April 2026',
-    fee: '80.0€',
-    link: 'https://best.eu.org/event/details.jsp?activity=o1nrq8z',
-    img: 'https://images.unsplash.com/photo-1598605272254-16f0c0ecdfa5?auto=format&fit=crop&w=600&q=80'
-  },
-  {
-    city: 'Grenoble',
-    country: 'France',
-    title: 'Teaching WALL-E about where he comes from',
-    dates: '4 - 11 April 2026',
+    title: 'Surf on an ecological wave: Designing the next gen surf Board',
+    dates: '14 - 21 June 2026',
     fee: '70.0€',
-    link: 'https://best.eu.org/event/details.jsp?activity=o1nrq92',
-    img: 'https://media.istockphoto.com/id/168616854/ro/fotografie/telecabina-grenoble.jpg?s=612x612&w=0&k=20&c=LIPEpxzO663EMIWE2nJmvy9a24qxZDCsbop8b5e2x_Q=',
+    link: 'https://best-eu.org/event/details.jsp?activity=m2mno9q',
+    img: 'https://st4.depositphotos.com/1000633/38184/i/450/depositphotos_381841026-stock-photo-bordeaux-france-june-2016-place.jpg'
   },
   {
-    city: 'Lyon',
-    country: 'France',
-    title: 'Fast and Fourier-rous',
-    dates: '11 - 19 April 2026',
-    fee: '90.0€',
-    link: 'https://best.eu.org/event/details.jsp?activity=i4afz2v',
-    img: 'https://images.unsplash.com/photo-1524397057410-1e775ed476f3?auto=format&fit=crop&w=600&q=80'
+    city: 'Istanbul',
+    country: 'Turkiye',
+    title: 'The Wolf of Digital Street: Sell Me This Product!',
+    dates: '17 - 24 June 2026',
+    fee: '80.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=k3bk11q',
+    img: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=800&q=80'
   },
   {
-    city: 'Athens',
+    city: 'Maribor',
+    country: 'Slovenia',
+    title: 'Pax Informatica: Advanced usage of Generative AI and LLMs',
+    dates: '27 June - 4 July 2026',
+    fee: '80.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=k3ljmak',
+    img: 'https://media.istockphoto.com/id/1163181078/photo/maribor-and-its-bridges-over-drava-river.jpg?s=612x612&w=0&k=20&c=cJwvBcBqGpx7tYVDf0KabnXy_U0eVYoLOipgaMmGTbQ='
+  },
+  {
+    city: 'Tallinn',
+    country: 'Estonia',
+    title: 'Think Like a CFO, Act Like a Leader - The Basics of Finance, Investing & Leadership',
+    dates: '28 June - 8 July 2026',
+    fee: '75.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=o1nrq8q',
+    img: 'https://media.digitalnomads.world/wp-content/uploads/2021/03/20120553/tallinn-digital-nomads-1024x683.jpg'
+  },
+  {
+    city: 'Louvain-la-Neuve',
+    country: 'Belgium',
+    title: 'Giving shape to the unknown: Machine Design and Rapid Prototyping',
+    dates: '2 - 11 July 2026',
+    fee: '85.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=k3bk11y',
+    img: 'https://blog.martinshotels.com/content/images/2024/11/12-MLLN-vue-aerienne-2022-PTE-CMYK---copyright-Simon-Schmitt.jpg'
+  },
+  {
+    city: 'Istanbul',
+    country: 'Turkiye',
+    title: 'Paradise on Marketing: Where Brands Catch Waves',
+    dates: '4 - 12 July 2026',
+    fee: '80.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=k3ljmah',
+    img: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    city: 'Košice',
+    country: 'Slovakia',
+    title: 'Lord of the Things: Create your own smart household with IoT!',
+    dates: '5 - 12 July 2026',
+    fee: '65.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=i4afz2n',
+    img: 'https://s.inyourpocket.com/gallery/253753.jpg'
+  },
+  {
+    city: 'Patras',
     country: 'Greece',
-    title: 'Age of Ultron: AI and Robotics',
-    dates: '3 - 11 May 2026',
+    title: 'Journal 4: Clean energy, New technologies & suSTANable buildings',
+    dates: '5 - 13 July 2026',
     fee: '72.0€',
-    link: 'https://best.eu.org/event/details.jsp?activity=m2mno9t',
-    img: 'https://images.unsplash.com/photo-1555993539-1732b0258235?auto=format&fit=crop&w=600&q=80'
+    link: 'https://best-eu.org/event/details.jsp?activity=i4afz2p',
+    img: 'https://www.greeka.com/photos/peloponnese/patra/hero/patra-1920.jpg'
   },
   {
-    city: 'Turin',
+    city: 'Skopje',
+    country: 'North Macedonia',
+    title: 'Designing Digital Experiences: Why Some Apps Feel Amazing',
+    dates: '5 - 13 July 2026',
+    fee: '66.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=k3bk11g',
+    img: 'https://cdn.tripspoint.com/uploads/photos/5106/skopje-city-tour-the-best-of-skopje_VlPmA.jpeg'
+  },
+  {
+    city: 'Leuven',
+    country: 'Belgium',
+    title: 'Double Trouble: When Physical Systems Go Digital',
+    dates: '7 - 16 July 2026',
+    fee: '100.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=k3bk11n',
+    img: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/4e/92/c5/old-market-square-oude.jpg?w=1200&h=700&s=1'
+  },
+  {
+    city: 'Vienna',
+    country: 'Austria',
+    title: "Gru's Guide for Minion Space Engineering: Tonight we steal the moon!",
+    dates: '11 - 19 July 2026',
+    fee: '75.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=k3bk11k',
+    img: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/78/c3/76/caption.jpg?w=1200&h=-1&s=1'
+  },
+  {
+    city: 'Iași',
+    country: 'Romania',
+    title: 'Empowered Diversity: International Mobility, Wellbeing, and Inclusive Campus Cultures',
+    dates: '11 - 22 July 2026',
+    fee: '50.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=g59bx2x',
+    img: 'https://covinnus.com/wp-content/uploads/2021/11/Palace-of-Culture-Iasi.jpg'
+  },
+  {
+    city: 'Bucharest',
+    country: 'Romania',
+    title: 'Once Upon a Model: Bring Your Design Concepts to Life in Software',
+    dates: '12 - 21 July 2026',
+    fee: '80.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=m2mno9k',
+    img: 'https://static01.nyt.com/images/2018/11/18/travel/18Hours-Bucharest1/18Hours-Bucharest1-superJumbo-v3.jpg'
+  },
+  {
+    city: 'Wrocław',
+    country: 'Poland',
+    title: 'Racing against hackers: Advanced Cybersecurity and Digital Forensics for IoT',
+    dates: '14 - 22 July 2026',
+    fee: '80.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=i4afz2k',
+    img: 'https://wa-uploads.profitroom.com/hastonoldtown/1920x850/17472937705063_wroclove.jpeg'
+  },
+  {
+    city: 'Coimbra',
+    country: 'Portugal',
+    title: 'Space Safety: Your Guide to the Final Frontier',
+    dates: '15 - 24 July 2026',
+    fee: '90.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=m2co30m',
+    img: 'https://images.winalist.com/blog/wp-content/uploads/2025/03/23063825/adobestock-164104316-1500x734.jpeg'
+  },
+  {
+    city: 'Chișinău',
+    country: 'Moldova',
+    title: 'When Code Makes Decisions: A Gentle Introduction to Agentic AI',
+    dates: '21 - 28 July 2026',
+    fee: '80.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=k3ljman',
+    img: 'https://www.aviontourism.com/images/1260-2600-fix/573c3c8e-00d8-4a30-9384-3aeddfa9f5fc'
+  },
+  {
+    city: 'Aveiro',
+    country: 'Portugal',
+    title: 'Data Science: Turning Stranger Data the Rightside Up',
+    dates: '22 - 29 July 2026',
+    fee: '80.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=m2mno9n',
+    img: 'https://bulgarianonthego.blog/wp-content/uploads/2022/05/things-to-do-in-aveiro-25-min.jpg'
+  },
+  {
+    city: 'Rome',
     country: 'Italy',
-    title: 'Infinity Energy: Quest for Sustainable Mobility',
-    dates: '3 - 10 May 2026',
-    fee: '0.0€',
-    link: 'https://best.eu.org/event/details.jsp?activity=i4afz2s',
-    img: 'https://media.istockphoto.com/id/636399938/photo/cityscape-of-torino-at-sunrise.jpg?s=612x612&w=0&k=20&c=oj_srxRzRvUthRMK5JMw2p6lBrdwNWrLG7tGSvnTH0E=',
+    title: 'Fly Me To The Moon: Engineering The BEST Space Supply Chain',
+    dates: '26 July - 1 August 2026',
+    fee: '70.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=k3bk11s',
+    img: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    city: 'Messina',
+    country: 'Italy',
+    title: 'TRON: The Rise of Autonomous Vehicles',
+    dates: '26 July - 2 August 2026',
+    fee: '50.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=k3bk11j',
+    img: 'https://www.sightseeing-experience.com/magazine/wp-content/uploads/2024/08/AdobeStock_46229260-scaled.jpeg'
+  },
+  {
+    city: 'Mostar',
+    country: 'Bosnia and Herzegovina',
+    title: 'Attention Economy: How Brands Win Minds',
+    dates: '26 July - 1 August 2026',
+    fee: '70.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=m2co30g',
+    img: 'https://media.cntraveller.com/photos/650c037b9a4941357e144469/16:9/w_2112,h_1188,c_limit/Mostar,%20Bosnia%20and%20Herzegovina-GettyImages-909655800.jpeg'
+  },
+  {
+    city: 'Cluj-Napoca',
+    country: 'Romania',
+    title: 'Where is Perry? Bring your own Summer Invention to life!',
+    dates: '27 July - 3 August 2026',
+    fee: '70.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=i4afz2d',
+    img: 'https://cdn.britannica.com/09/226309-050-F0352A58/City-of-Cluj-Napoca-in-Romania.jpg'
+  },
+  {
+    city: 'Belgrade',
+    country: 'Serbia',
+    title: 'The Alchemy of Startup Creation: Turn Your Idea into Gold!',
+    dates: '8 - 15 August 2026',
+    fee: '60.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=g59bx3h',
+    img: 'https://lp-cms-production.imgix.net/2023-03/shutterstockRF_383722246.jpg'
+  },
+  {
+    city: 'Prague',
+    country: 'Czech Republic',
+    title: 'Hash me if you can: Blockchain most wanted',
+    dates: '14 - 23 August 2026',
+    fee: '80.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=k3bk11v',
+    img: 'https://www.gokitetours.com/wp-content/uploads/2025/01/Top-10-Must-See-Tourist-Attractions-in-Prague-Czech-Republic.webp'
+  },
+  {
+    city: 'Ljubljana',
+    country: 'Slovenia',
+    title: 'Solving Cold Cases in the Genome: Mystery of Gene and Cell Therapies',
+    dates: '24 - 31 August 2026',
+    fee: '80.0€',
+    link: 'https://best-eu.org/event/details.jsp?activity=m2co30y',
+    img: 'https://images.goway.com/production/hero_image/Ljubljana_Slovenia_AdobeStock_262853364.jpeg'
   }
 ]);
-
 
 const wallPhotos = ref([
   'PIQ_0381.JPG',
@@ -546,7 +701,7 @@ onMounted(() => {
   --radius-blob: 30px;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
+* { margin: 0; padding: 0; box-sizing: border-box; cursor: auto; }
 
 html, body {
   width: 100%;
@@ -599,6 +754,34 @@ html, body {
   position: absolute; width: 40px; height: 60px;
   animation: floatLantern 5s ease-in-out infinite;
 }
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  font-size: 1.8rem;
+  color: var(--text-main);
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.social-icon .fa-instagram:hover {
+  color: #E1306C;
+}
+
+.social-icon .fa-facebook-f:hover {
+  color: #1877F2;
+}
+
 .lantern-body {
   width: 100%; height: 100%; background: var(--pink-pop);
   border-radius: 10px; opacity: 0.7; box-shadow: 0 5px 15px rgba(255, 154, 158, 0.4);
@@ -630,6 +813,7 @@ html, body {
 }
 
 .cursor-dot, .cursor-outline {
+  display: none;
   position: fixed; top: 0; left: 0;
   transform: translate(-50%, -50%);
   border-radius: 50%;
